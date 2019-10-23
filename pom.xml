@@ -8,7 +8,7 @@
     <artifactId>base-test</artifactId>
     <version>1.0-SNAPSHOT</version>
     <properties>
-        <hutool.version>4.0.5</hutool.version>
+        <hutool.version>4.1.12</hutool.version>
     </properties>
 <dependencies>
     <dependency>
