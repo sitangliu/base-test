@@ -16,7 +16,7 @@ public class SocketClient {
     public static void main(String[] args) {
         try{
             //创建一个客户端Socket连接
-            Socket client = new Socket("192.168.1.148", 9999);
+            Socket client = new Socket("127.0.0.1", 9999);
             //设置超时时间
             client.setSoTimeout(60000);
             //获取键盘输入

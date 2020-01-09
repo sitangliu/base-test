@@ -19,8 +19,7 @@ public class ServerThread implements Runnable {
         try{
             InputStream inputStream = client.getInputStream();
             BufferedReader buf = new BufferedReader(new InputStreamReader(inputStream));
-            OutputStream out = client.getOutputStream();
-            PrintWriter  writer = new PrintWriter (new OutputStreamWriter(out));
+            PrintWriter  writer = new PrintWriter (new OutputStreamWriter(client.getOutputStream()),true);
             boolean flag = true;
             while (flag){
                 String readLine = buf.readLine();
@@ -28,8 +27,9 @@ public class ServerThread implements Runnable {
                 if(readLine.equals("bye")){
                     flag = false;
                 }else{
-                    writer.write("hello"+readLine);
-                    writer.flush();
+//                    writer.write("hello"+readLine); //write并没有返回消息
+                    writer.println("hello："+readLine);
+//                    writer.flush();
                 }
             }
 
